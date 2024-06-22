@@ -16,6 +16,6 @@ La idea subyacente a la aplicación es libre completamente, pero debe ser sencil
 
 - Editor de una receta: se puede editar una descripción y luego una lista de ingredientes. Cada ingrediente es lo mínimo: nombre y cantidad. En principio solo hay una receta, y es recomendable no usar base de datos y guardar solo un fichero JSON. Aunque una vez hecho eso, es fácil permitir tener más de una receta.
 
-- First commit text
+- before create-next-app
 
 
