@@ -1,3 +1,5 @@
+import { actionAddTodo } from "@/actions/todos";
+import TodoItem from "@/components/TodoItem";
 import { dbGetTodos } from "@/lib/todos";
 
 export const dynamic = "force-dynamic";
@@ -10,13 +12,13 @@ export default async function Home() {
   return (
     <main className="p-8">
       <h1>Todo List</h1>
-      <form>
-      <input type="text" name="what" placeholder="Add a new todo" className="border-black p-1 mr-2 rounded" />
-      <button>Add Todo</button>
+      <form action={actionAddTodo}>
+        <input type="text" name="what" placeholder="Add a new todo" className="border-black p-1 mr-2 rounded" />
+        <button>Add Todo</button>
       </form>
       <ul>
         {todos.map((todo) => (
-          <li key={todo.id}>{todo.what}</li>
+          <TodoItem key={todo.id} todo={todo} />
         ))}
       </ul>
     </main>
