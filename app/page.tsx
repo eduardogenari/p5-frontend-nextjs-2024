@@ -21,10 +21,7 @@ export default async function Home() {
 
   return (
 
-    <main style={{ width: '1750px', margin: '0 auto' }} className="bg-blue-100">
-      <div className="w-550px mx-auto bg-red-500">
-        hi
-      </div>
+    <main style={{ width: '1750px', margin: '0 auto' }}>
       <h1>Todo List</h1>
       <TodoForm />
       <div className="max-w-5xl flex justify-between">

@@ -14,41 +14,44 @@ export default function TodoCard({ todo }: { todo: Todo }) {
       <CardHeader>
         <div className={"flex justify-between"}>
           <p className={"text-gray-500"}>{todo.id}</p>
-          <Badge className={"md:w-24"}>{todo.status_id ? "done" : "to do"}</Badge>
         </div>
       </CardHeader>
       <CardContent className="grid gap-4">
         <p>{todo.text}</p>
       </CardContent>
       <CardFooter className="group-hover:visible invisible">
-        <Button onClick={() => actionStatusToDo(todo.id)} variant="outline">
+        <Button 
+            onClick={() => actionStatusToDo(todo.id)} 
+            variant="ghost"
+            className="sm:w-14 hover:bg-stone-200 text-gray-500"
+            >
           to do
         </Button>
         <Button
           onClick={() => actionStatusStandBy(todo.id)}
-          variant="outline"
-          className="w-30"
+          variant="ghost"
+          className="sm:w-20 hover:bg-stone-200 text-gray-500"
         >
           stand by
         </Button>
         <Button
           onClick={() => actionStatusInProgress(todo.id)}
-          variant="outline"
-          className="w-30"
+          variant="ghost"
+          className="sm:w-20 hover:bg-stone-200 text-gray-500"
         >
           in progress
         </Button>
         <Button
           onClick={() => actionStatusDone(todo.id)}
-          variant="outline"
-          className="w-30"
+          variant="ghost"
+          className="sm:w-14 hover:bg-stone-200 text-gray-500"
         >
           done
         </Button>
         <Button
           onClick={() => actionDeleteTodo(todo.id)}
-          variant="destructive"
-          className="w-30"
+          variant="ghost"
+          className="sm:w-14 hover:bg-red-200 text-gray-500"
         >
           delete
         </Button>
