@@ -4,7 +4,7 @@ import { Todo } from "@/lib/todos";
 import React from "react";
 import { Card, CardContent, CardFooter, CardHeader } from "./ui/card";
 import { Button } from "./ui/button";
-import { actionDeleteTodo, actionStatusDone, actionStatusInProgress, actionStatusStandBy, actionStatusToDo, actionToggleTodoDone } from "@/actions/todos";
+import { actionDeleteTodo, actionStatusDone, actionStatusInProgress, actionStatusStandBy, actionStatusToDo } from "@/actions/todos";
 
 export default function TodoCard({ todo }: { todo: Todo }) {
   return (
