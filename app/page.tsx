@@ -1,9 +1,5 @@
-import { actionAddTodo } from "@/actions/todos";
 import TodoCard from "@/components/TodoCard";
 import TodoForm from "@/components/TodoForm";
-import TodoItem from "@/components/TodoItem";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { dbGetTodos } from "@/lib/todos";
 
 export const dynamic = "force-dynamic";
@@ -12,17 +8,13 @@ export const revalidate = 0;
 export default async function Home() {
   const todos = await dbGetTodos();
 
-  console.log(todos);
-
-  const statusToDo = todos.filter(todo => todo.status_id === 1);
-  const statusStandBy = todos.filter(todo => todo.status_id === 2);
-  const statusInProgress = todos.filter(todo => todo.status_id === 3);
-  const statusDone = todos.filter(todo => todo.status_id === 4);
+  const statusToDo = todos.filter((todo) => todo.status_id === 1);
+  const statusStandBy = todos.filter((todo) => todo.status_id === 2);
+  const statusInProgress = todos.filter((todo) => todo.status_id === 3);
+  const statusDone = todos.filter((todo) => todo.status_id === 4);
 
   return (
-
-    <main style={{ width: '1750px', margin: '0 auto' }}>
-      <h1>Todo List</h1>
+    <main style={{ width: "1750px", margin: "0 auto" }}>
       <TodoForm />
       <div className="max-w-5xl flex justify-between">
         <div>
