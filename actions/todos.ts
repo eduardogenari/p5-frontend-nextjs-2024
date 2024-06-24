@@ -1,6 +1,6 @@
 "use server";
 
-import { dbAddTodo, dbDeleteTodo, dbStatusDone, dbStatusInProgress, dbStatusStandBy, dbStatusToDo, dbToggleTodoDone } from "@/lib/todos";
+import { dbAddTodo, dbDeleteTodo, dbStatusDone, dbStatusInProgress, dbStatusStandBy, dbStatusToDo } from "@/lib/todos";
 import { revalidatePath } from "next/cache";
 
 export async function actionAddTodo(formData: FormData) {
@@ -10,11 +10,6 @@ export async function actionAddTodo(formData: FormData) {
     }
     const what = whatField.toString();
     await dbAddTodo(what);
-    revalidatePath("/");
-  }
-  
-  export async function actionToggleTodoDone(id: number) {
-    await dbToggleTodoDone(id);
     revalidatePath("/");
   }
 
